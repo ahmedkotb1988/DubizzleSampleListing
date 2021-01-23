@@ -15,6 +15,7 @@
 		E045BDC425BC722500A58A58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E045BDC225BC722500A58A58 /* LaunchScreen.storyboard */; };
 		E045BDCF25BC722500A58A58 /* ListingIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E045BDCE25BC722500A58A58 /* ListingIOSTests.swift */; };
 		E045BDDA25BC722500A58A58 /* ListingIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E045BDD925BC722500A58A58 /* ListingIOSUITests.swift */; };
+		E07E4C3525BC7D7F00118F85 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4C3425BC7D7F00118F85 /* NetworkClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E045BDD525BC722500A58A58 /* ListingIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListingIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E045BDD925BC722500A58A58 /* ListingIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingIOSUITests.swift; sourceTree = "<group>"; };
 		E045BDDB25BC722500A58A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E07E4C3425BC7D7F00118F85 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				E045BDC025BC722500A58A58 /* Assets.xcassets */,
 				E045BDC225BC722500A58A58 /* LaunchScreen.storyboard */,
 				E045BDC525BC722500A58A58 /* Info.plist */,
+				E07E4C3425BC7D7F00118F85 /* NetworkClient.swift */,
 			);
 			path = ListingIOS;
 			sourceTree = "<group>";
@@ -191,7 +194,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Ahmed Kotb";
 				TargetAttributes = {
 					E045BDB325BC722100A58A58 = {
@@ -262,6 +265,7 @@
 				E045BDBC25BC722100A58A58 /* ViewController.swift in Sources */,
 				E045BDB825BC722100A58A58 /* AppDelegate.swift in Sources */,
 				E045BDBA25BC722100A58A58 /* SceneDelegate.swift in Sources */,
+				E07E4C3525BC7D7F00118F85 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +346,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -402,6 +407,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -443,7 +449,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kotb.ListingIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -460,7 +466,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kotb.ListingIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
