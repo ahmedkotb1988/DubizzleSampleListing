@@ -13,4 +13,15 @@ extension URLSession: URLSessionProtocol {
         
         return dataTask(with: request, completionHandler: completionHandler) as URLSessionDataTask
     }
+    
+    public func uploadTask(with request: URLRequest,
+                           from bodyData: Data?,
+                           completionHandler: @escaping URLSessionProtocol.DataTaskResult) -> NetworkOperation {
+        return uploadTask(with: request, from: bodyData, completionHandler: completionHandler) as URLSessionUploadTask
+    }
+    
+    public func downloadTask(with request: URLRequest,
+                             completionHandler: @escaping URLSessionProtocol.DownloadTaskResult) -> NetworkOperation {
+        return downloadTask(with: request, completionHandler: completionHandler) as URLSessionTask
+    }
 }

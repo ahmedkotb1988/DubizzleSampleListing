@@ -29,6 +29,11 @@
 		E07E4C7C25BC905900118F85 /* URLSessionTask+NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4C7B25BC905900118F85 /* URLSessionTask+NetworkOperation.swift */; };
 		E07E4C8125BC90D700118F85 /* NetworkError+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4C8025BC90D700118F85 /* NetworkError+Equatable.swift */; };
 		E07E4C8625BC919100118F85 /* NetworkClientProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4C8525BC919100118F85 /* NetworkClientProducer.swift */; };
+		E07E4C8E25BC929C00118F85 /* RequestPerformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4C8D25BC929C00118F85 /* RequestPerformable.swift */; };
+		E07E4C9725BC930B00118F85 /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4C9625BC930B00118F85 /* RequestResult.swift */; };
+		E07E4C9C25BCA12900118F85 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4C9B25BCA12900118F85 /* ResultModel.swift */; };
+		E07E4CA125BCA39B00118F85 /* ImageDownloadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4CA025BCA39B00118F85 /* ImageDownloadResult.swift */; };
+		E07E4CA625BCA44000118F85 /* KeyedDecodingContainer+Datatypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4CA525BCA44000118F85 /* KeyedDecodingContainer+Datatypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +82,11 @@
 		E07E4C7B25BC905900118F85 /* URLSessionTask+NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionTask+NetworkOperation.swift"; sourceTree = "<group>"; };
 		E07E4C8025BC90D700118F85 /* NetworkError+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkError+Equatable.swift"; sourceTree = "<group>"; };
 		E07E4C8525BC919100118F85 /* NetworkClientProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientProducer.swift; sourceTree = "<group>"; };
+		E07E4C8D25BC929C00118F85 /* RequestPerformable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPerformable.swift; sourceTree = "<group>"; };
+		E07E4C9625BC930B00118F85 /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
+		E07E4C9B25BCA12900118F85 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		E07E4CA025BCA39B00118F85 /* ImageDownloadResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadResult.swift; sourceTree = "<group>"; };
+		E07E4CA525BCA44000118F85 /* KeyedDecodingContainer+Datatypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Datatypes.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,12 +139,14 @@
 			children = (
 				E045BDB725BC722100A58A58 /* AppDelegate.swift */,
 				E045BDB925BC722100A58A58 /* SceneDelegate.swift */,
+				E07E4C9B25BCA12900118F85 /* ResultModel.swift */,
 				E045BDBB25BC722100A58A58 /* ViewController.swift */,
 				E045BDBD25BC722100A58A58 /* Main.storyboard */,
 				E045BDC025BC722500A58A58 /* Assets.xcassets */,
 				E045BDC225BC722500A58A58 /* LaunchScreen.storyboard */,
 				E045BDC525BC722500A58A58 /* Info.plist */,
 				E07E4C3925BC81B200118F85 /* Network Client */,
+				E07E4C9225BC92A800118F85 /* NetworkManager */,
 			);
 			path = ListingIOS;
 			sourceTree = "<group>";
@@ -176,6 +188,7 @@
 				E07E4C4725BC847100118F85 /* NetworkConstants.swift */,
 				E07E4C5B25BC8CE200118F85 /* Data+MimeType.swift */,
 				E07E4C6025BC8D1B00118F85 /* Encodable+Encode.swift */,
+				E07E4CA525BCA44000118F85 /* KeyedDecodingContainer+Datatypes.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -200,6 +213,16 @@
 				E07E4C7B25BC905900118F85 /* URLSessionTask+NetworkOperation.swift */,
 			);
 			path = URLSession;
+			sourceTree = "<group>";
+		};
+		E07E4C9225BC92A800118F85 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				E07E4C8D25BC929C00118F85 /* RequestPerformable.swift */,
+				E07E4C9625BC930B00118F85 /* RequestResult.swift */,
+				E07E4CA025BCA39B00118F85 /* ImageDownloadResult.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,17 +358,22 @@
 			files = (
 				E07E4C4825BC847100118F85 /* NetworkConstants.swift in Sources */,
 				E07E4C3E25BC81F800118F85 /* URLSessionProtocol.swift in Sources */,
+				E07E4C9725BC930B00118F85 /* RequestResult.swift in Sources */,
 				E045BDBC25BC722100A58A58 /* ViewController.swift in Sources */,
 				E07E4C6125BC8D1B00118F85 /* Encodable+Encode.swift in Sources */,
+				E07E4CA125BCA39B00118F85 /* ImageDownloadResult.swift in Sources */,
 				E07E4C5225BC877B00118F85 /* URLSessionNetworkClient+MultiPartRequest.swift in Sources */,
+				E07E4CA625BCA44000118F85 /* KeyedDecodingContainer+Datatypes.swift in Sources */,
 				E07E4C5725BC8BAE00118F85 /* URLSessionNetworkClient+NetworkClient.swift in Sources */,
 				E07E4C8625BC919100118F85 /* NetworkClientProducer.swift in Sources */,
+				E07E4C9C25BCA12900118F85 /* ResultModel.swift in Sources */,
 				E045BDB825BC722100A58A58 /* AppDelegate.swift in Sources */,
 				E07E4C7725BC8F3B00118F85 /* URLSession+URLSessionProtocol.swift in Sources */,
 				E07E4C5C25BC8CE200118F85 /* Data+MimeType.swift in Sources */,
 				E07E4C7225BC8DFB00118F85 /* URLSessionNetworkManager.swift in Sources */,
 				E07E4C8125BC90D700118F85 /* NetworkError+Equatable.swift in Sources */,
 				E045BDBA25BC722100A58A58 /* SceneDelegate.swift in Sources */,
+				E07E4C8E25BC929C00118F85 /* RequestPerformable.swift in Sources */,
 				E07E4C4D25BC86AE00118F85 /* URLRequest+AddHttpBody.swift in Sources */,
 				E07E4C7C25BC905900118F85 /* URLSessionTask+NetworkOperation.swift in Sources */,
 				E07E4C4325BC830300118F85 /* URLSessionNetworkClient.swift in Sources */,

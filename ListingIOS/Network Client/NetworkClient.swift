@@ -53,6 +53,25 @@ public struct Parameter {
     }
 }
 
+public struct FileDownloadResult: Codable {
+    public let localUrl: URL?
+    public let remoteUrl: URL?
+    public let data: Data?
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        localUrl = container[.localUrl]
+        remoteUrl = container[.remoteUrl]
+        data = container[.data]
+    }
+    
+    public init( localUrl: URL?, remoteUrl: URL?, data: Data?) {
+        self.localUrl = localUrl
+        self.remoteUrl = remoteUrl
+        self.data = data
+    }
+}
+
 //Mark: Protocols
 
 public protocol NetworkEndPoint {
@@ -74,4 +93,24 @@ public protocol NetworkRequestClient {
                              completion: @escaping Completion) -> NetworkOperation?
 }
 
-public protocol NetworkClient: NetworkRequestClient {}
+public protocol NetworkUploadClient {
+    func upload<T: Decodable>(serviceEndPoint: NetworkEndPoint,
+                              fileFieldName: String,
+                              decodingType: T.Type,
+                              completion: @escaping Completion) -> NetworkOperation?
+}
+public protocol NetworkDownloadClient {
+    func download<T: Decodable>(serviceEndPoint: NetworkEndPoint,
+                                decodingType: T.Type,
+                                completion: @escaping  Completion) -> NetworkOperation?
+}
+
+public protocol NetworkClient: NetworkRequestClient & NetworkUploadClient & NetworkDownloadClient { }
+
+public extension Decodable {
+  init(from: [AnyHashable: Any]) throws {
+    let data = try JSONSerialization.data(withJSONObject: from, options: .prettyPrinted)
+    let decoder = JSONDecoder()
+    self = try decoder.decode(Self.self, from: data)
+  }
+}
