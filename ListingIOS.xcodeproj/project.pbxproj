@@ -28,6 +28,7 @@
 		E07E4C7725BC8F3B00118F85 /* URLSession+URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4C7625BC8F3B00118F85 /* URLSession+URLSessionProtocol.swift */; };
 		E07E4C7C25BC905900118F85 /* URLSessionTask+NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4C7B25BC905900118F85 /* URLSessionTask+NetworkOperation.swift */; };
 		E07E4C8125BC90D700118F85 /* NetworkError+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4C8025BC90D700118F85 /* NetworkError+Equatable.swift */; };
+		E07E4C8625BC919100118F85 /* NetworkClientProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E4C8525BC919100118F85 /* NetworkClientProducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		E07E4C7625BC8F3B00118F85 /* URLSession+URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+URLSessionProtocol.swift"; sourceTree = "<group>"; };
 		E07E4C7B25BC905900118F85 /* URLSessionTask+NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionTask+NetworkOperation.swift"; sourceTree = "<group>"; };
 		E07E4C8025BC90D700118F85 /* NetworkError+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkError+Equatable.swift"; sourceTree = "<group>"; };
+		E07E4C8525BC919100118F85 /* NetworkClientProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientProducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +164,7 @@
 				E07E4C7125BC8DFB00118F85 /* URLSessionNetworkManager.swift */,
 				E07E4C6925BC8D7500118F85 /* Clients */,
 				E07E4C6525BC8D3D00118F85 /* Foundation */,
-				E07E4C8025BC90D700118F85 /* NetworkError+Equatable.swift */,
+				E07E4C8525BC919100118F85 /* NetworkClientProducer.swift */,
 			);
 			path = "Network Client";
 			sourceTree = "<group>";
@@ -170,6 +172,7 @@
 		E07E4C6525BC8D3D00118F85 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				E07E4C8025BC90D700118F85 /* NetworkError+Equatable.swift */,
 				E07E4C4725BC847100118F85 /* NetworkConstants.swift */,
 				E07E4C5B25BC8CE200118F85 /* Data+MimeType.swift */,
 				E07E4C6025BC8D1B00118F85 /* Encodable+Encode.swift */,
@@ -336,6 +339,7 @@
 				E07E4C6125BC8D1B00118F85 /* Encodable+Encode.swift in Sources */,
 				E07E4C5225BC877B00118F85 /* URLSessionNetworkClient+MultiPartRequest.swift in Sources */,
 				E07E4C5725BC8BAE00118F85 /* URLSessionNetworkClient+NetworkClient.swift in Sources */,
+				E07E4C8625BC919100118F85 /* NetworkClientProducer.swift in Sources */,
 				E045BDB825BC722100A58A58 /* AppDelegate.swift in Sources */,
 				E07E4C7725BC8F3B00118F85 /* URLSession+URLSessionProtocol.swift in Sources */,
 				E07E4C5C25BC8CE200118F85 /* Data+MimeType.swift in Sources */,
