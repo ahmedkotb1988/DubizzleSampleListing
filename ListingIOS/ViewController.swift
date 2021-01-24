@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    let viewModel = ItemsListViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.viewModel.getItemsList { (itemsList) in
+            print(itemsList)
+        }
+        self.viewModel.onItemsLoadSuccess = {[weak self]  in
+            self?.reloadInputViews()
+        }
     }
 
 
