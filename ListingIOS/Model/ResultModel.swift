@@ -9,7 +9,7 @@
 import Foundation
 
 public struct ResultModel: Codable {
-    let results: String?
+    let results: [ItemsListModel]?
     
     
     public init(from decoder: Decoder) throws {
