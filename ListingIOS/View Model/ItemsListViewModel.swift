@@ -29,8 +29,8 @@ class ItemsListViewModel: BaseViewModel, ItemsListContractor {
         self.service.getItemsList { [weak self] (result) in
             
             guard let itemsListResult = result.apiData?.results else {
-                self?.onItemsLoadFail?()
                 self?.finishLoadingWithMessage(title: "Error", description: "Failed to retrieve data", isSuccess: false, location: .low)
+                self?.onItemsLoadFail?()
                 return
             }
             self?.finishLoading()
