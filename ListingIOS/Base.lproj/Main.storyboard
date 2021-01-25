@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Listing View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ListingIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ListingViewController" customModule="ListingIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itemTableViewCell" rowHeight="139" id="Ydr-AF-5b4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemTableViewCell" rowHeight="139" id="Ydr-AF-5b4" customClass="ItemTableViewCell" customModule="ListingIOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="139"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ydr-AF-5b4" id="PWx-nc-3iL">
@@ -29,18 +29,64 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mis-u3-xNb">
-                                                    <rect key="frame" x="16" y="16" width="96" height="82"/>
+                                                    <rect key="frame" x="16" y="16" width="96" height="107"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="96" id="TdZ-FH-3ZQ"/>
-                                                        <constraint firstAttribute="height" constant="82" id="obx-JV-MyU"/>
+                                                        <constraint firstAttribute="height" constant="96" id="obx-JV-MyU"/>
                                                     </constraints>
                                                 </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tug-9Q-M8j">
+                                                    <rect key="frame" x="133" y="16" width="41.5" height="107"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTc-tH-aek">
+                                                            <rect key="frame" x="0.0" y="0.0" width="41.5" height="32"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6S-73-aOG">
+                                                            <rect key="frame" x="0.0" y="49" width="41.5" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20.5" id="Efm-v2-KBu"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhY-OR-5re">
+                                                            <rect key="frame" x="0.0" y="86.5" width="41.5" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20.5" id="QtS-SP-mgf"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="aTc-tH-aek" secondAttribute="trailing" id="4T0-TQ-toJ"/>
+                                                        <constraint firstItem="aTc-tH-aek" firstAttribute="top" secondItem="Tug-9Q-M8j" secondAttribute="top" id="FgF-Dl-FJI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="W6S-73-aOG" secondAttribute="trailing" id="HbO-zT-jDZ"/>
+                                                        <constraint firstItem="aTc-tH-aek" firstAttribute="leading" secondItem="Tug-9Q-M8j" secondAttribute="leading" id="KCO-JJ-kzg"/>
+                                                        <constraint firstItem="W6S-73-aOG" firstAttribute="leading" secondItem="Tug-9Q-M8j" secondAttribute="leading" id="zl0-ZY-7Yi"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Mis-u3-xNb" firstAttribute="top" secondItem="PWx-nc-3iL" secondAttribute="top" constant="16" id="7xT-7Q-Dh7"/>
+                                                <constraint firstItem="Tug-9Q-M8j" firstAttribute="leading" secondItem="Mis-u3-xNb" secondAttribute="trailing" constant="21" id="Kt0-Oq-Pkf"/>
+                                                <constraint firstAttribute="bottom" secondItem="Tug-9Q-M8j" secondAttribute="bottom" constant="16" id="fRM-Vk-Cc8"/>
                                                 <constraint firstItem="Mis-u3-xNb" firstAttribute="leading" secondItem="PWx-nc-3iL" secondAttribute="leading" constant="16" id="hCn-xq-lai"/>
+                                                <constraint firstItem="Tug-9Q-M8j" firstAttribute="height" secondItem="Mis-u3-xNb" secondAttribute="height" id="qHU-M5-yTg"/>
+                                                <constraint firstItem="Tug-9Q-M8j" firstAttribute="top" secondItem="Mis-u3-xNb" secondAttribute="top" id="wbY-CM-TEl"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="createdAtLabel" destination="W6S-73-aOG" id="8RU-kL-453"/>
+                                            <outlet property="itemImageView" destination="Mis-u3-xNb" id="JGb-1y-ldy"/>
+                                            <outlet property="nameLabel" destination="aTc-tH-aek" id="3g4-rn-8cH"/>
+                                            <outlet property="priceLabel" destination="UhY-OR-5re" id="Avo-jI-1p1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
