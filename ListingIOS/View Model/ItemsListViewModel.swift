@@ -39,5 +39,14 @@ class ItemsListViewModel: BaseViewModel, ItemsListContractor {
             self?.onItemsLoadSuccess?()
         }
     }
+    
+    func getFormattedDate(createdDate: String) -> String {
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SS"
+        let dateObject = dateFormatter.date(from: createdDate)
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let formattedDate = dateFormatter.string(from: dateObject ?? Date())
+        return formattedDate
+    }
 }
 
