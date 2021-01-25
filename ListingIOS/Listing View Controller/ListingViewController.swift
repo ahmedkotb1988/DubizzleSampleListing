@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class ListingViewController: UIViewController {
+class ListingViewController: UIViewController, ListingNavigatable {
     
     @IBOutlet weak var tableView: UITableView!
     let viewModel = ItemsListViewModel()
@@ -56,6 +56,13 @@ extension ListingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.tableView.estimatedRowHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let itemList = self.viewModel.getItemsList(), !itemList.isEmpty {
+            let item = itemList[indexPath.row]
+            self.navigateToListingDetails(source: self, itemModel: item)
+        }
     }
 }
 
