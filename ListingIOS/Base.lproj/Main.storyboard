@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yif-Fn-3PF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ListingTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yif-Fn-3PF">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -81,6 +81,9 @@
                                                 <constraint firstItem="Tug-9Q-M8j" firstAttribute="top" secondItem="Mis-u3-xNb" secondAttribute="top" id="wbY-CM-TEl"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="ListingCell">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="createdAtLabel" destination="W6S-73-aOG" id="8RU-kL-453"/>
                                             <outlet property="itemImageView" destination="Mis-u3-xNb" id="JGb-1y-ldy"/>
@@ -155,6 +158,9 @@
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="detailsView">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstItem="fWu-QQ-jY4" firstAttribute="leading" secondItem="o4P-g4-3yB" secondAttribute="leading" constant="16" id="0BG-0S-iQI"/>
                                     <constraint firstItem="fWu-QQ-jY4" firstAttribute="top" secondItem="o4P-g4-3yB" secondAttribute="top" constant="15" id="41l-m3-VXk"/>

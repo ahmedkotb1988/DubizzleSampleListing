@@ -25,8 +25,8 @@ class ListingDetailsViewController: UIViewController {
         
         if let item = self.listModel {
             self.itemNameLabel.text = item.name
-            self.itemPriceLabel.text = item.price
-            self.ItemDateLabel.text = self.viewModel.getFormattedDate(createdDate: item.created_at ?? "")
+            self.itemPriceLabel.text = "Price: " + (item.price ?? "")
+            self.ItemDateLabel.text = "Created At: " + self.viewModel.getFormattedDate(createdDate: item.created_at ?? "")
             if let imageURL = item.image_urls?.first{
                 self.itemImageView.sd_setImage(with: URL(string: imageURL), completed: nil)
             }
